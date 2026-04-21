@@ -1239,6 +1239,7 @@ GameObject:
   - component: {fileID: 406072547}
   - component: {fileID: 406072551}
   - component: {fileID: 406072550}
+  - component: {fileID: 406072552}
   m_Layer: 0
   m_Name: sphere-glow (2)
   m_TagString: Untagged
@@ -1379,6 +1380,33 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!50 &406072552
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406072546}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &414627636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1422,7 @@ GameObject:
   - component: {fileID: 414627644}
   - component: {fileID: 414627637}
   - component: {fileID: 414627645}
+  - component: {fileID: 414627646}
   m_Layer: 0
   m_Name: L_flipper
   m_TagString: Untagged
@@ -1543,10 +1572,10 @@ HingeJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -1, y: 0}
   m_ConnectedAnchor: {x: -1.9, y: -3.4}
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
+    m_MaximumMotorForce: 1000
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: 33
@@ -1586,6 +1615,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0000000017218733, y: 0.014444122}
   m_Size: {x: 2.4000006, y: 0.51256615}
   m_Direction: 1
+--- !u!114 &414627646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414627636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6463bab3b0c2f94ba31fedf6c9f8c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hinge: {fileID: 414627644}
+  upSpeed: -3000
+  downSpeed: 400
+  torque: 1000
 --- !u!1 &475854575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1644,7 @@ GameObject:
   - component: {fileID: 475854578}
   - component: {fileID: 475854580}
   - component: {fileID: 475854579}
+  - component: {fileID: 475854581}
   m_Layer: 0
   m_Name: R_bumper
   m_TagString: Untagged
@@ -1784,6 +1830,33 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!50 &475854581
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475854575}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &595350793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,7 +2074,7 @@ CompositeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.015
   m_ColliderPaths:
   - m_Collider: {fileID: 642045879}
     m_ColliderPaths:
@@ -2113,8 +2186,8 @@ CompositeCollider2D:
         Y: -3850000
       - X: -3300000
         Y: -6200000
-      - X: -3580000
-        Y: -6500000
+      - X: -3571041
+        Y: -6531241
       - X: -3740000
         Y: -6950000
       - X: -3740000
@@ -2129,9 +2202,9 @@ CompositeCollider2D:
         Y: -8550000
   m_CompositePaths:
     m_Paths:
-    - - {x: -0.329993, y: -0.6199934}
-      - {x: -0.3580176, y: -0.6500494}
-      - {x: -0.374, y: -0.6950435}
+    - - {x: -0.32998762, y: -0.6199884}
+      - {x: -0.3571183, y: -0.6531596}
+      - {x: -0.374, y: -0.695049}
       - {x: -0.373988, y: -0.7800372}
       - {x: -0.3659805, y: -0.80502963}
       - {x: -0.3459464, y: -0.8350298}
@@ -2286,7 +2359,7 @@ PolygonCollider2D:
       - {x: 0.055, y: -0.58}
       - {x: -0.195, y: -0.77}
       - {x: -0.825, y: -1.24}
-      - {x: -0.895, y: -1.3}
+      - {x: -0.8927604, y: -1.3062483}
       - {x: -0.935, y: -1.39}
       - {x: -0.935, y: -1.56}
       - {x: -0.91499996, y: -1.61}
@@ -2404,6 +2477,7 @@ GameObject:
   - component: {fileID: 820532621}
   - component: {fileID: 820532625}
   - component: {fileID: 820532624}
+  - component: {fileID: 820532626}
   m_Layer: 0
   m_Name: sphere-glow (1)
   m_TagString: Untagged
@@ -2544,6 +2618,33 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!50 &820532626
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820532620}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &824667650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,8 +2941,8 @@ CompositeCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
-  m_GenerationType: 1
-  m_EdgeRadius: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0.015
   m_ColliderPaths:
   - m_Collider: {fileID: 944628097}
     m_ColliderPaths:
@@ -2965,63 +3066,63 @@ CompositeCollider2D:
         Y: -7551745
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.4616371, y: -0.7592262}
-      - {x: 0.5272609, y: -0.7410141}
-      - {x: 0.5565794, y: -0.7121085}
-      - {x: 0.56781703, y: -0.677878}
-      - {x: 0.5688331, y: -0.6516466}
-      - {x: 0.5461035, y: -0.5697406}
-      - {x: 0.5186399, y: -0.5306612}
-      - {x: 0.4836786, y: -0.5092585}
-      - {x: 0.1780443, y: -0.3501502}
-      - {x: 0.0562885, y: -0.2853248}
-      - {x: -0.0254415, y: -0.2300712}
-      - {x: -0.0267912, y: -0.225301}
-      - {x: -0.074961804, y: -0.1712573}
-      - {x: -0.1101287, y: -0.1342496}
-      - {x: -0.1128027, y: -0.1246443}
-      - {x: -0.1429044, y: -0.0759422}
-      - {x: -0.1705025, y: -0.0213287}
-      - {x: -0.1837655, y: 0.0113613}
-      - {x: -0.1889209, y: 0.0151546}
-      - {x: -0.2142488, y: 0.1066955}
-      - {x: -0.2117788, y: 0.1125739}
-      - {x: -0.2186016, y: 0.1521237}
-      - {x: -0.2245626, y: 0.2334853}
-      - {x: -0.2302155, y: 0.2838069}
-      - {x: -0.2580679, y: 0.623725}
-      - {x: -0.2623899, y: 0.6692414}
-      - {x: -0.27442092, y: 0.71260583}
-      - {x: -0.2836228, y: 0.7308052}
-      - {x: -0.3097589, y: 0.7650818}
-      - {x: -0.339575, y: 0.7827406}
-      - {x: -0.38717592, y: 0.78932583}
-      - {x: -0.4270238, y: 0.768826}
-      - {x: -0.456362, y: 0.739914}
-      - {x: -0.4664188, y: 0.71636903}
-      - {x: -0.4698062, y: 0.6687511}
-      - {x: -0.4654915, y: 0.6232614}
-      - {x: -0.4653367, y: 0.6077391}
-      - {x: -0.4623563, y: 0.567059}
-      - {x: -0.4567041, y: 0.516744}
-      - {x: -0.4447815, y: 0.3540071}
-      - {x: -0.4391293, y: 0.3036921}
-      - {x: -0.4301872, y: 0.1816383}
-      - {x: -0.4273605, y: 0.1564786}
-      - {x: -0.421859, y: 0.1216748}
-      - {x: -0.35637802, y: -0.114423804}
-      - {x: -0.3379884, y: -0.150813}
-      - {x: -0.303863, y: -0.2139923}
-      - {x: -0.2881355, y: -0.2407643}
-      - {x: -0.25282732, y: -0.2932385}
-      - {x: -0.207137, y: -0.35321102}
-      - {x: -0.1771758, y: -0.38640982}
-      - {x: -0.1485409, y: -0.4147964}
-      - {x: -0.0239664, y: -0.5047736}
-      - {x: 0.0252575, y: -0.5326231}
-      - {x: 0.2052838, y: -0.6279778}
-      - {x: 0.4151273, y: -0.7410141}
-      - {x: 0.4488298, y: -0.75762653}
+    - - {x: 0.058798302, y: -0.28483582}
+      - {x: -0.0234327, y: -0.23028441}
+      - {x: -0.0248243, y: -0.22552611}
+      - {x: -0.073466, y: -0.1719033}
+      - {x: -0.1089531, y: -0.1352053}
+      - {x: -0.1117109, y: -0.1256238}
+      - {x: -0.1422362, y: -0.0771865}
+      - {x: -0.1703092, y: -0.0228173}
+      - {x: -0.18385771, y: 0.0097572}
+      - {x: -0.189046, y: 0.0135055}
+      - {x: -0.2151718, y: 0.1048218}
+      - {x: -0.2127532, y: 0.1107216}
+      - {x: -0.2199214, y: 0.1502136}
+      - {x: -0.226592, y: 0.23152031}
+      - {x: -0.2326825, y: 0.2817793}
+      - {x: -0.2635002, y: 0.62143993}
+      - {x: -0.26822022, y: 0.666926}
+      - {x: -0.28062922, y: 0.7101842}
+      - {x: -0.2899895, y: 0.7283025}
+      - {x: -0.3164235, y: 0.7623493}
+      - {x: -0.3463928, y: 0.7797476}
+      - {x: -0.3940495, y: 0.7859169}
+      - {x: -0.4337171, y: 0.7650702}
+      - {x: -0.4628016, y: 0.7359034}
+      - {x: -0.4726525, y: 0.7122717}
+      - {x: -0.4756243, y: 0.6646257}
+      - {x: -0.4709127, y: 0.61917543}
+      - {x: -0.4706229, y: 0.603657}
+      - {x: -0.467287, y: 0.562999}
+      - {x: -0.46119562, y: 0.5127336}
+      - {x: -0.4478536, y: 0.3501085}
+      - {x: -0.4417623, y: 0.2998431}
+      - {x: -0.4317557, y: 0.1778737}
+      - {x: -0.4287099, y: 0.1527429}
+      - {x: -0.4229047, y: 0.1179882}
+      - {x: -0.3553659, y: -0.1175298}
+      - {x: -0.3366603, y: -0.1537554}
+      - {x: -0.3019847, y: -0.2166346}
+      - {x: -0.2860244, y: -0.2432683}
+      - {x: -0.2502582, y: -0.2954345}
+      - {x: -0.2040473, y: -0.3550047}
+      - {x: -0.1737989, y: -0.3879392}
+      - {x: -0.144915, y: -0.4160775}
+      - {x: -0.0195616, y: -0.5049629}
+      - {x: 0.0299074, y: -0.5323839}
+      - {x: 0.2103818, y: -0.6259647}
+      - {x: 0.42158142, y: -0.7373649}
+      - {x: 0.4554241, y: -0.7536806}
+      - {x: 0.46834362, y: -0.7551606}
+      - {x: 0.5337076, y: -0.7363845}
+      - {x: 0.5627725, y: -0.7072243}
+      - {x: 0.573711, y: -0.6728969}
+      - {x: 0.57449824, y: -0.6466581}
+      - {x: 0.5510545, y: -0.5649529}
+      - {x: 0.523251, y: -0.5261148}
+      - {x: 0.48810372, y: -0.5050178}
+      - {x: 0.1811008, y: -0.348587}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.0005
   m_UseDelaunayMesh: 0
@@ -3170,6 +3271,7 @@ GameObject:
   - component: {fileID: 949733792}
   - component: {fileID: 949733794}
   - component: {fileID: 949733793}
+  - component: {fileID: 949733795}
   m_Layer: 0
   m_Name: L_bumper
   m_TagString: Untagged
@@ -3355,6 +3457,33 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!50 &949733795
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949733789}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,6 +3944,7 @@ GameObject:
   - component: {fileID: 1632163629}
   - component: {fileID: 1632163628}
   - component: {fileID: 1632163635}
+  - component: {fileID: 1632163636}
   m_Layer: 0
   m_Name: R_flipper
   m_TagString: Untagged
@@ -3837,7 +3967,7 @@ MonoBehaviour:
   _data:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
-    - {fileID: 11400000, guid: edf10f0e22d870247a9e0a4b71508252, type: 2}
+    - {fileID: 11400000, guid: 84d64d964b9d22a4a8d87b03de225b2c, type: 2}
 --- !u!233 &1632163629
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -4007,6 +4137,22 @@ CapsuleCollider2D:
   m_Offset: {x: 2.869669e-10, y: 0.002407253}
   m_Size: {x: 2.4000008, y: 0.5362964}
   m_Direction: 1
+--- !u!114 &1632163636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632163627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6463bab3b0c2f94ba31fedf6c9f8c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hinge: {fileID: 0}
+  upSpeed: 3000
+  downSpeed: -400
+  torque: 1000
 --- !u!1 &1712694370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,6 +4166,7 @@ GameObject:
   - component: {fileID: 1712694371}
   - component: {fileID: 1712694375}
   - component: {fileID: 1712694374}
+  - component: {fileID: 1712694376}
   m_Layer: 0
   m_Name: sphere-glow
   m_TagString: Untagged
@@ -4160,6 +4307,33 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
+--- !u!50 &1712694376
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712694370}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1925606813
 GameObject:
   m_ObjectHideFlags: 0
