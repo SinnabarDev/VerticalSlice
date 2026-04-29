@@ -4,8 +4,8 @@ public class Flipper : MonoBehaviour
 {
     public HingeJoint2D hinge;
 
-    public float upSpeed = 3000f;
-    public float downSpeed = -2000f;
+    [SerializeField]public float upSpeed = 1000f;
+    [SerializeField]public float downSpeed = -1000f;
     public float torque = 5000f;
 
     void Awake()

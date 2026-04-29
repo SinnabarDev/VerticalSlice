@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 276f58f9ec926cc4fb7fdbdfd4aadb3a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - plunger: {instanceID: 0}
+  - rewardButtonPrefab: {fileID: 2940943020830827235, guid: 843932d470aaa8a4c8266df788dcc0d5, type: 3}
+  - choiceContainer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
