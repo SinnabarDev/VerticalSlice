@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
 
 public class RewardManager : MonoBehaviour
 {
@@ -27,85 +27,75 @@ public class RewardManager : MonoBehaviour
     void SyncFromVisualScripting()
     {
         // Scene variables (global stats)
-        currency =
-            (int)Variables.Scene(gameObject).Get("currency");
+        currency = (int)Variables.Scene(gameObject).Get("currency");
 
-        ballsLost =
-            (int)Variables.Scene(gameObject).Get("ballsLost");
+        ballsLost = (int)Variables.Scene(gameObject).Get("ballsLost");
 
-        flipperLength =
-            (float)Variables.Scene(gameObject).Get("length");
+        flipperLength = (float)Variables.Scene(gameObject).Get("length");
 
-        float bumperForce =
-            (float)Variables.Scene(gameObject).Get("bumperforcex");
+        float bumperForce = (float)Variables.Scene(gameObject).Get("bumperforcex");
 
         // Object variable (plunger-specific)
         if (plunger != null)
         {
-            plungerPower =
-                (float)Variables.Object(plunger).Get("MaxOutput");
+            plungerPower = (float)Variables.Object(plunger).Get("MaxOutput");
         }
     }
 
-public void Generate3Choices()
-{
-    // 🔴 COST CHECK (important for your economy system)
-    int currency =
-        (int)Variables.Scene(gameObject).Get("currency");
-
-    if (currency < generateCost)
+    public void Generate3Choices()
     {
-        Debug.Log("Not enough currency to generate choices!");
-        return;
-    }
+        // 🔴 COST CHECK (important for your economy system)
+        int currency = (int)Variables.Scene(gameObject).Get("currency");
 
-    currency -= generateCost;
-
-    Variables.Scene(gameObject)
-        .Set("currency", currency);
-
-    // --- VALIDATION ---
-    if (allRewards == null || allRewards.Count == 0)
-    {
-        Debug.LogError("No rewards in allRewards list!");
-        return;
-    }
-
-    if (rewardButtonPrefab == null)
-    {
-        Debug.LogError("RewardButtonPrefab is not assigned!");
-        return;
-    }
-
-    if (choiceContainer == null)
-    {
-        Debug.LogError("ChoiceContainer is not assigned!");
-        return;
-    }
-
-    ClearChoices();
-
-    // --- SPAWN ---
-    for (int i = 0; i < 3; i++)
-    {
-        CoinModifier reward =
-            allRewards[Random.Range(0, allRewards.Count)];
-
-        GameObject obj =
-            Instantiate(rewardButtonPrefab, choiceContainer);
-
-        RewardChoiceUI ui =
-            obj.GetComponent<RewardChoiceUI>();
-
-        if (ui == null)
+        if (currency < generateCost)
         {
-            Debug.LogError("RewardChoiceUI missing on prefab!");
-            continue;
+            Debug.Log("Not enough currency to generate choices!");
+            return;
         }
 
-        ui.Setup(reward);
+        currency -= generateCost;
+
+        Variables.Scene(gameObject).Set("currency", currency);
+
+        // --- VALIDATION ---
+        if (allRewards == null || allRewards.Count == 0)
+        {
+            Debug.LogError("No rewards in allRewards list!");
+            return;
+        }
+
+        if (rewardButtonPrefab == null)
+        {
+            Debug.LogError("RewardButtonPrefab is not assigned!");
+            return;
+        }
+
+        if (choiceContainer == null)
+        {
+            Debug.LogError("ChoiceContainer is not assigned!");
+            return;
+        }
+
+        ClearChoices();
+
+        // --- SPAWN ---
+        for (int i = 0; i < 3; i++)
+        {
+            CoinModifier reward = allRewards[Random.Range(0, allRewards.Count)];
+
+            GameObject obj = Instantiate(rewardButtonPrefab, choiceContainer);
+
+            RewardChoiceUI ui = obj.GetComponent<RewardChoiceUI>();
+
+            if (ui == null)
+            {
+                Debug.LogError("RewardChoiceUI missing on prefab!");
+                continue;
+            }
+
+            ui.Setup(reward);
+        }
     }
-}
 
     public void ClearChoices()
     {
@@ -150,8 +140,7 @@ public void Generate3Choices()
 
                 if (plunger != null)
                 {
-                    Variables.Object(plunger)
-                        .Set("MaxOutput", plungerPower);
+                    Variables.Object(plunger).Set("MaxOutput", plungerPower);
                 }
                 break;
         }

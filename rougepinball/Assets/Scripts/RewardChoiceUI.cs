@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class RewardChoiceUI : MonoBehaviour
@@ -10,7 +10,6 @@ public class RewardChoiceUI : MonoBehaviour
 
     private RewardManager RM;
     private CoinModifier reward;
-    
 
     void Awake()
     {

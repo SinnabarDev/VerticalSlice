@@ -10,15 +10,17 @@ public enum ModifierType
     RightFlipperUpSpeed,
     FlipperDownSpeed,
     PlungerMaxPower,
-    PlungerPullbackMultiplier
+    PlungerPullbackMultiplier,
 }
 
-[CreateAssetMenu(menuName="Roguelike/Coin Modifier")]
+[CreateAssetMenu(menuName = "Roguelike/Coin Modifier")]
 public class CoinModifier : ScriptableObject
 {
     public string rewardName;
     public Sprite icon;
-    [TextArea] public string description;
+
+    [TextArea]
+    public string description;
 
     public ModifierType type;
     public float amount = 1f;
