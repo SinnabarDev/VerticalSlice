@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 71f20b63c0afa454a8ca91370dff4fd4, type: 3}
   description: Increases the Up Speed of the Left Flipper
   type: 4
-  amount: 100
+  amount: 50
   rarityWeight: 50

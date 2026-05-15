@@ -17,6 +17,7 @@ public class RewardManager : MonoBehaviour
     float flipperLength;
     float bumperForce;
     float plungerPower;
+    float plungermulti;
     public int generateCost = 100;
 
     void Start()
@@ -39,6 +40,7 @@ public class RewardManager : MonoBehaviour
         if (plunger != null)
         {
             plungerPower = (float)Variables.Object(plunger).Get("MaxOutput");
+            plungermulti = (float)Variables.Object(plunger).Get("PullBackDistance");
         }
     }
 
@@ -127,7 +129,7 @@ public class RewardManager : MonoBehaviour
 
             case ModifierType.FlipperLength:
                 flipperLength += reward.amount;
-                Variables.Scene(gameObject).Set("flipperLength", flipperLength);
+                Variables.Scene(gameObject).Set("length", flipperLength);
                 break;
 
             case ModifierType.BumperForce:
@@ -142,6 +144,21 @@ public class RewardManager : MonoBehaviour
                 {
                     Variables.Object(plunger).Set("MaxOutput", plungerPower);
                 }
+                break;
+            case ModifierType.PlungerPullbackMultiplier:
+                plungermulti += reward.amount;
+
+                if (plunger != null)
+                {
+                    Variables.Object(plunger).Set("PullBackDistance", plungermulti);
+                }
+                break;
+
+            case ModifierType.LeftFlipperUpSpeed: { } // Implement extra ball logic here (e.g., increase max balls or give an immediate extra ball)
+                break;
+            case ModifierType.RightFlipperUpSpeed: { } // Implement extra ball logic here (e.g., increase max balls or give an immediate extra ball)
+                break;
+            case ModifierType.FlipperDownSpeed: { } // Implement extra ball logic here (e.g., increase max balls or give an immediate extra ball)
                 break;
         }
 

@@ -11,7 +11,35 @@
 
 ## Milestone 2 Devlog
 
-Milestone 2 Devlog goes here.
+## Milestone 2 Devlog
+1. Write scriptable object code with my data points.
+   - Create RewardTypes based on the modifier desired.
+   - Create String Title Name.
+   - Create String Text Description.
+   - Create sprite icon field.
+   - Create int value for rarity.
+   - All fields will be passed to a container or prefab.
+   - The title name will be a text field to define the object to the player.
+   - Sprite will be passed to the container.
+   - Description will be passed to container.
+   - RewardType will be read from the coin machine script.
+   - Amount/modifier will be read from the coin machine script.
+2. Create ui/Coin generation manger.
+   - UI will be probaly a button with CoinMachine sprite.
+   - Component with script coinmanager/generator.
+   - 3 container gameobjects to hold instaite coin game child.
+   - Coins need to have visual and be button on click().
+3. Make other code or interactions read the code.
+   - Coin Machine will store a list of scriptable objects and generate from this pool.
+   - An array will spawn 3 scriptable objects at RAND.
+   - There will be a way to input and apply reward type read from the scriptable object selected.
+   - gameObjects are then destroyed.
+   - Coin Machine will read the graph and scene variables in graphs that the modifiers target.
+
+## ANSWER THIS AFTER CODING: 
+1. Did the task steps break-down activity & quiz question (from W5) help you build a feature for this Milestone? Why or why not, and what would you do to improve your break-downs to be more helpful if you were to do them again?
+2. Explain how you bridged visual scripting and code in your game. Are you calling a custom event from a Graph from a C# method, or vice versa, and what purpose does this serve in your architecture? Make sure to name the C# script(s) involved, and attach a screenshot of the relevant Graph.
+3. Briefly explain (in 1-2 sentences) what Unity system you want us to grade for Feature (3). It doesn't matter if it's what you originally pitched- pick your best one and tell us where to find it so we can give you credit.
 
 ## Milestone 3 Devlog
 

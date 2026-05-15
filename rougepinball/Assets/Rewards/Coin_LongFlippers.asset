@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f2245bda6e8371946b2a6fff93170780, type: 3}
   description: Extends the length of the Flippers
   type: 2
-  amount: 1
+  amount: 0.1
   rarityWeight: 10
