@@ -2634,8 +2634,9 @@ GameObject:
   - component: {fileID: 1163740648}
   - component: {fileID: 1163740647}
   - component: {fileID: 1163740653}
+  - component: {fileID: 1163740654}
   m_Layer: 0
-  m_Name: spiked-stamp
+  m_Name: Warrior-Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2776,7 +2777,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1820474160, guid: 9a314ae040e1c994794a2e08b021911a, type: 3}
+  m_Sprite: {fileID: 7384290322352760091, guid: 728135fe2ac4b434ab56e445d647d2a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2814,9 +2815,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297b902cc1a4abf478944353d0a7dcb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1163740654}
   minY: -6.5
   maxY: 5.5
-  speed: 3
+  speed: 2.5
+--- !u!95 &1163740654
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163740646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b96f062c1d073496fb335d14ea81c2ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1459539898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3095,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5818075684c921641a7b9789c750da94, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.52156866}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -38,8 +38,11 @@
 
 ## ANSWER THIS AFTER CODING: 
 1. Did the task steps break-down activity & quiz question (from W5) help you build a feature for this Milestone? Why or why not, and what would you do to improve your break-downs to be more helpful if you were to do them again?
+Yes the task break down activity did help me to build this feature as it helped me to seperate the high level tasks needed and the individual steps or components to funnel into the breakdown goals. This was able to help me envision the steps to reach my milestone.
 2. Explain how you bridged visual scripting and code in your game. Are you calling a custom event from a Graph from a C# method, or vice versa, and what purpose does this serve in your architecture? Make sure to name the C# script(s) involved, and attach a screenshot of the relevant Graph.
-3. Briefly explain (in 1-2 sentences) what Unity system you want us to grade for Feature (3). It doesn't matter if it's what you originally pitched- pick your best one and tell us where to find it so we can give you credit.
+My visual scripting that bridges the code in my game is a script graph that controls hinges in my game. Unfortunately the motor speed needs to be called by code geting the component setting which is unabled to be set specifically in the visual script graph nodes as the input is a joint2d node. There I use the script (C# Flipper.cs) to store the motor speed and update when powerup influence the motor speed going up and down individually for both flipper controls.
+[VScript C# Google Drawing](https://docs.google.com/drawings/d/1LeMLj8s50WFcKiaQj641pIOIj1642RkLF1U1SAxtKoU/edit?usp=sharing)
+3. Briefly explain (in 1-2 sentences) what Unity system you want us to grade for Feature (3). It doesn't matter if it's what you originally pitched- pick your best one and tell us where to find it so we can give you credit. I want to grade my scriptable object Coins these are reward modifiers that can be found in my rouge like state (passive state) once the player reaches 3 balls falling into the hole per round.
 
 ## Milestone 3 Devlog
 
